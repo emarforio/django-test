@@ -17,7 +17,8 @@ class ContactSerializer(OrderedModelSerializer):
 
     class Meta:
         model = Contact
-        fields = ['id', 'name', 'email', 'order', 'user']
+        fields = ['id', 'name', 'email', 'avatar', 'order', 'user']
+        read_only_fields = ['avatar']
         extra_kwargs = {
             'user': {'write_only': True}
         }

@@ -12,6 +12,7 @@ class User(models.Model):
 class Contact(OrderedModel):
     name = models.CharField(max_length=100)
     email = models.EmailField()
+    avatar = models.FileField(upload_to='uploads', blank=True, null=True)
 
     user = models.ForeignKey(
         User, related_name='contacts', on_delete=models.CASCADE)
